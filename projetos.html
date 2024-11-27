@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Projeto - Eco7</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .header-container {
+      background-color: #2e8b57;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-menu a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .nav-menu a:hover {
+      background-color: #1c5e3a;
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: block;
+      }
+      .nav-menu a {
+        display: block;
+        text-align: center;
+        margin: 5px 0;
+      }
+    }
+
+    .project-details {
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      width: 80%;
+      max-width: 900px;
+    }
+
+    .project-details img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      background-color: #e0e0df;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    .progress-bar div {
+      height: 20px;
+      width: 60%; /* Example percentage, adjust as needed */
+      background-color: #2e8b57;
+      border-radius: 5px;
+    }
+
+    .buy-section {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .buy-button {
+      background-color: #28a745;
+      color: #fff;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .buy-button:hover {
+      background-color: #218838;
+      transform: scale(1.05);
+    }
+
+    .testimonials {
+      margin-top: 20px;
+      background-color: #eafaf1;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonials p {
+      font-style: italic;
+      color: #333;
+    }
+
+    .certification {
+      margin: 20px auto;
+      width: 80%;
+      max-width: 900px;
+      text-align: center;
+    }
+
+    .certification img {
+      width: 120px;
+      margin: 5px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header com navegação -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <h1>Eco7</h1>
+      </div>
+      <nav class="nav-menu">
+        <a href="projetos.html">Projetos</a>
+        <a href="compra.html">Compra</a>
+        <a href="vitrine.html">Vitrine</a>
+        <a href="suporte.html">Suporte</a>
+        <a href="index.html">Sair</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Seção de Detalhes dos Projetos -->
+  <section class="project-details">
+    <h2>Projeto de Reflorestamento: Floresta Verde</h2>
+    <img src="imagens/reflorestamento.jpeg" alt="Imagem do projeto de reflorestamento">
+    <p>Este projeto visa restaurar uma área de 500 hectares de floresta tropical, contribuindo para a preservação da biodiversidade e a redução de CO2 na atmosfera.</p>
+    <div class="progress-bar">
+      <div style="width: 60%;"></div>
+    </div>
+    <p><strong>Créditos Disponíveis:</strong> 812 de 1000</p>
+    <div class="buy-section">
+      <a class="buy-button" href="pagamento.html">Comprar Créditos</a>
+    </div>
+    <div class="testimonials">
+      <p>"Investi no projeto Floresta Verde e estou muito feliz em ver o impacto positivo que ele tem na natureza. Uma forma fácil de fazer a diferença!"</p>
+      <p><strong>- João Silva, apoiador do projeto</strong></p>
+    </div>
+  </section>
+
+  <!-- Seção de Detalhes do Projeto 2 -->
+  <section class="project-details">
+    <h2>Projeto de Energia Solar: Sol Verde</h2>
+    <img src="imagens/solar.jpg" alt="Imagem do projeto de energia solar">
+    <p>Este projeto visa instalar painéis solares em comunidades rurais para fornecer energia limpa e acessível, promovendo a sustentabilidade e a independência energética.</p>
+    <div class="progress-bar">
+      <div style="width: 50%;"></div>
+    </div>
+    <p><strong>Créditos Disponíveis:</strong> 250 de 500</p>
+    <div class="buy-section">
+      <a class="buy-button" href="pagamento.html">Comprar Créditos</a>
+    </div>
+    <div class="testimonials">
+      <p>"Este projeto trouxe eletricidade para minha comunidade e melhorou nossa qualidade de vida. Uma verdadeira mudança!"</p>
+      <p><strong>- Maria Costa, apoiadora do projeto</strong></p>
+    </div>
+  </section>
+
+  <!-- Seção de Detalhes do Projeto 3 -->
+  <section class="project-details">
+    <h2>Projeto de Conservação de Corais: Oceano Vivo</h2>
+    <img src="imagens/corais.jpg" alt="Imagem do projeto de conservação de corais">
+    <p>Este projeto visa a restauração e conservação de recifes de corais, protegendo a biodiversidade marinha e combatendo os efeitos das mudanças climáticas.</p>
+    <div class="progress-bar">
+      <div style="width: 40%;"></div>
+    </div>
+    <p><strong>Créditos Disponíveis:</strong> 400 de 890</p>
+    <div class="buy-section">
+      <a class="buy-button" href="pagamento.html">Comprar Créditos</a>
+    </div>
+    <div class="testimonials">
+      <p>"Apoiar a conservação de corais é essencial para manter nossos oceanos saudáveis. Recomendo a todos!"</p>
+      <p><strong>- Carlos Oliveira, apoiador do projeto</strong></p>
+    </div>
+  </section>
+
+  <!-- Seção de Certificações -->
+  <div class="certification">
+    <p><strong>Certificações:</strong></p>
+    <img src="imagens/certificado.jfif" alt="Certificação de Sustentabilidade">
+    <img src="imagens/selo_verde.jfif" alt="Certificação Verde">
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Eco7. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
