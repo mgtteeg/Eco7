@@ -1,0 +1,350 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7fa;
+  /* Cinza Claro */
+  color: #333;
+  /* Cinza Escuro */
+}
+
+/* Estilos para o header */
+header {
+  background-color: #003366;
+  /* Cor de fundo do cabeçalho */
+  color: white;
+  /* Cor do texto */
+  padding: 20px 0;
+  /* Espaçamento superior e inferior */
+}
+
+.header-container {
+  display: flex;
+  /* Usando flexbox para organizar logo e navegação */
+  justify-content: space-between;
+  /* Coloca os elementos no início e no fim */
+  align-items: center;
+  /* Alinha os itens no centro verticalmente */
+  max-width: 1200px;
+  /* Largura máxima */
+  margin: 0 auto;
+  /* Centraliza o conteúdo */
+  padding: 0 20px;
+  /* Padding lateral */
+}
+
+.logo h1 {
+  font-size: 36px;
+  /* Tamanho da fonte para o título */
+}
+
+nav ul {
+  list-style-type: none;
+  /* Remove a lista de pontos */
+}
+
+nav ul li {
+  display: inline-block;
+  /* Exibe os itens de navegação lado a lado */
+  margin: 0 20px;
+  /* Espaçamento entre os itens */
+}
+
+nav ul li a {
+  color: white;
+  /* Cor do texto dos links */
+  font-size: 18px;
+  /* Tamanho da fonte */
+  text-decoration: none;
+  /* Remove sublinhado dos links */
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+  /* Adiciona sublinhado ao passar o mouse */
+}
+
+
+/* Seção Hero com Gradiente e Imagem de Fundo */
+.hero {
+  background-image: url('https://imgs.search.brave.com/Eo3SCYAKzRHU31BHcbnqoCgms62z9Y5PHDqdGK9H3v4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zNS5z/dGF0aWMuYnJhc2ls/ZXNjb2xhLnVvbC5j/b20uYnIvYmUvMjAy/Mi8xMC92aXN0YS1m/bG9yZXN0YS1hbWF6/b25pY2EuanBn');
+  /* Imagem fornecida */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  /* Gradiente com transparência */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h2 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffffff;
+  /* Cor do texto agora é branco */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  /* Sombra suave para melhorar o contraste */
+}
+
+.hero p {
+  font-size: 24px;
+  margin-bottom: 40px;
+  color: #ffffff;
+  /* Cor do parágrafo ajustada para branco também */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  /* Sombra suave */
+}
+
+.hero-buttons a {
+  padding: 12px 30px;
+  font-size: 18px;
+  text-decoration: none;
+  margin: 10px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.hero-buttons .btn-primary {
+  background-color: #28a745;
+  /* Verde Claro */
+  color: white;
+}
+
+.hero-buttons .btn-primary:hover {
+  background-color: #218838;
+  /* Verde Escuro */
+}
+
+.hero-buttons .btn-secondary {
+  background-color: #ffcc00;
+  /* Amarelo Claro */
+  color: white;
+}
+
+.hero-buttons .btn-secondary:hover {
+  background-color: #e0a800;
+  /* Amarelo Escuro */
+}
+
+/* Seções de Conteúdo */
+section {
+  padding: 60px 20px;
+}
+
+.section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #003366;
+  /* Azul Escuro */
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+/* Cards */
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.card {
+  background-color: white;
+  padding: 30px;
+  width: 30%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #28a745;
+  /* Verde Claro */
+}
+
+.card p {
+  font-size: 16px;
+}
+
+/* Notícias */
+.news-item {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.news-item h3 {
+  font-size: 22px;
+  color: #003366;
+  /* Azul Escuro */
+}
+
+.news-item a {
+  color: #1E90FF;
+  /* Azul Claro */
+  text-decoration: none;
+}
+
+.news-item a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background-color: #003366;
+  /* Cor de fundo do rodapé */
+  color: white;
+  /* Cor do texto */
+  padding: 20px;
+  /* Espaçamento interno */
+  text-align: center;
+  /* Alinha o texto ao centro */
+}
+
+footer ul {
+  list-style-type: none;
+  /* Remove a lista de pontos */
+}
+
+footer ul li {
+  display: inline-block;
+  /* Exibe os itens de navegação lado a lado */
+  margin: 0 10px;
+  /* Espaçamento entre os itens */
+}
+
+footer ul li a {
+  color: white;
+  /* Cor dos links */
+  text-decoration: none;
+  /* Remove sublinhado dos links */
+}
+
+
+/* Media Queries para Responsividade */
+
+/* Ajustes para telas pequenas (smartphones) */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 20px;
+  }
+
+  .hero-buttons a {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  /* Ajuste para cards na seção "Por que comprar/vender" */
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  /* Ajuste da navegação */
+  nav ul {
+    display: block;
+    text-align: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  /* Ajuste do header */
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo h1 {
+    font-size: 28px;
+  }
+}
+
+/* Ajustes para telas menores que 480px (smartphones muito pequenos) */
+@media (max-width: 480px) {
+  .hero h2 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .hero-buttons a {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .section-content {
+    padding: 20px;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .news-item {
+    padding: 15px;
+  }
+
+  footer ul li {
+    margin: 5px;
+  }
+}
