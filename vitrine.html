@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vitrine de Projetos - Eco7</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    .header-container {
+      background-color: #2e8b57;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-menu a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .nav-menu a:hover {
+      background-color: #1c5e3a;
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: block;
+      }
+
+      .nav-menu a {
+        display: block;
+        text-align: center;
+        margin: 5px 0;
+      }
+    }
+
+    .project-details {
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      width: 80%;
+      max-width: 900px;
+    }
+
+    .project-details img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .details {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .details a {
+      background-color: #28a745;
+      color: #fff;
+      padding: 8px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .details a:hover {
+      background-color: #218838;
+      transform: scale(1.05);
+    }
+
+    .form-container {
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      max-width: 900px;
+    }
+
+    .form-container h2 {
+      margin-bottom: 15px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .form-group input[type="file"] {
+      padding: 3px;
+    }
+
+    .form-group button {
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .form-group button:hover {
+      background-color: #218838;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header com navegação -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <h1>Eco7</h1>
+      </div>
+      <nav class="nav-menu">
+        <a href="compra.html">Compra</a>
+        <a href="vitrine.html">Vitrine</a>
+        <a href="suporte.html">Suporte</a>
+        <a href="index.html">Sair</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Seção de Vitrine de Projetos -->
+  <section class="project-details">
+    <h2>Projeto de Energia Solar: Sol Verde</h2>
+    <img src="imagens/solar.jpg" alt="Imagem do projeto de energia solar">
+    <p><strong>Descrição:</strong> Este projeto visa instalar painéis solares em comunidades rurais para fornecer
+      energia limpa e acessível, promovendo a sustentabilidade e a independência energética.</p>
+    <div class="details">
+      <p><strong>Créditos Disponíveis:</strong> 250 de 500</p>
+      <a href="detalhes_projeto.html">Ver detalhes</a>
+    </div>
+  </section>
+
+  <!-- Seção para nova postagem de projeto -->
+  <section class="form-container">
+    <h2>Nova Postagem de Projeto</h2>
+    <form action="enviar_projeto.php" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="nome-projeto">Nome do Projeto:</label>
+        <input type="text" id="nome-projeto" name="nome-projeto" required>
+      </div>
+      <div class="form-group">
+        <label for="descricao-projeto">Descrição do Projeto:</label>
+        <textarea id="descricao-projeto" name="descricao-projeto" rows="4" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="creditos-disponiveis">Créditos Disponíveis:</label>
+        <input type="number" id="creditos-disponiveis" name="creditos-disponiveis" min="1" required>
+      </div>
+      <div class="form-group">
+        <label for="imagem-projeto">Imagem do Projeto:</label>
+        <input type="file" id="imagem-projeto" name="imagem-projeto" accept="image/*" required>
+      </div>
+      <div class="form-group">
+        <label for="documentacao-projeto">Documentação (PDF, DOCX, etc.):</label>
+        <input type="file" id="documentacao-projeto" name="documentacao-projeto" accept=".pdf,.docx,.pptx" required>
+      </div>
+      <div class="form-group">
+        <button type="submit">Enviar Projeto</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Eco7. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+
+</html>

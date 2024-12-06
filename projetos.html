@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Projeto - Eco7</title>
+  <style>
+    /* CSS embutido para esta página */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7fa;
+      color: #333;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px 0;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo h1 {
+      font-size: 36px;
+    }
+
+    nav ul {
+      list-style-type: none;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .project-details {
+      padding: 50px 20px;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .project-details:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-details h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #003366;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .project-details p {
+      font-size: 20px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .project-details img {
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      margin-bottom: 40px;
+      border-radius: 8px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .project-details img:hover {
+      transform: scale(1.05);
+    }
+
+    .progress-bar {
+      width: 100%;
+      background-color: #e0e0df;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      height: 20px;
+      overflow: hidden;
+    }
+
+    .progress-bar div {
+      height: 100%;
+      background-color: #2e8b57;
+      border-radius: 5px;
+      transition: width 1s ease-in-out;
+    }
+
+    .buy-section {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .buy-button {
+      background-color: #28a745;
+      color: #fff;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .buy-button:hover {
+      background-color: #218838;
+      transform: scale(1.05);
+    }
+
+    .testimonials {
+      margin-top: 20px;
+      background-color: #eafaf1;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonials p {
+      font-style: italic;
+      color: #333;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer ul {
+      list-style-type: none;
+    }
+
+    footer ul li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    footer ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer ul li a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header com navegação -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <h1>Eco7</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="login_cadastro.html">Investir</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="login_cadastro.html">Login/Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Seção de Detalhes do Projeto 1 -->
+  <section class="project-details">
+    <h2>Projeto de Reflorestamento: Floresta Verde</h2>
+    <img src="imagens/reflorestamento.jpeg" alt="Imagem do projeto de reflorestamento">
+    <p>
+      O projeto "Floresta Verde" é uma iniciativa de reflorestamento que visa recuperar áreas de floresta tropical
+      degradada, restaurando ecossistemas essenciais para a biodiversidade. Com o plantio de milhares de árvores
+      nativas, estamos promovendo a absorção de CO2, um dos maiores responsáveis pelas mudanças climáticas. Este
+      projeto não só combate a poluição do ar, mas também cria um habitat para inúmeras espécies de fauna e flora,
+      garantindo um futuro mais sustentável. Ao investir neste projeto, você contribui diretamente para a regeneração
+      ambiental, ajudando a combater a perda de biodiversidade e mitigando os efeitos do aquecimento global.</p>
+    <div class="progress-bar">
+      <div style="width: 60%;"></div>
+    </div>
+    <p><strong>Créditos Disponíveis:</strong> 812 de 1000</p>
+    <div class="buy-section">
+      <a class="buy-button" href="login_cadastro.html">Comprar Créditos</a>
+    </div>
+    <div class="testimonials">
+      <p>"Investi no projeto Floresta Verde e estou muito feliz em ver o impacto positivo que ele tem na natureza.
+        Uma
+        forma fácil de fazer a diferença!"</p>
+      <p><strong>- João Silva, apoiador do projeto</strong></p>
+    </div>
+  </section>
+
+  <!-- Seção de Detalhes do Projeto 2 -->
+  <section class="project-details">
+    <h2>Projeto de Energia Solar: Sol Verde</h2>
+    <img src="imagens/solar.jpg" alt="Imagem do projeto de energia solar">
+    <p>O projeto "Sol Verde" foca na instalação de sistemas de energia solar em comunidades rurais e isoladas, onde a
+      energia elétrica convencional é escassa ou inexistente. Com painéis solares de última geração, as famílias dessas
+      regiões agora têm acesso à energia limpa, sustentável e de baixo custo. Além de melhorar a qualidade de vida, o
+      projeto promove a independência energética, reduzindo a dependência de combustíveis fósseis e diminuindo as
+      emissões de gases de efeito estufa. Este é um passo importante para um futuro mais verde, onde a energia renovável
+      seja a principal fonte de eletricidade para todos.</p>
+    <div class="progress-bar">
+      <div style="width: 50%;"></div>
+    </div>
+    <p><strong>Créditos Disponíveis:</strong> 250 de 500</p>
+    <div class="buy-section">
+      <a class="buy-button" href="login_cadastro.html">Comprar Créditos</a>
+    </div>
+    <div class="testimonials">
+      <p>"Este projeto trouxe eletricidade para minha comunidade e melhorou nossa qualidade de vida. Uma verdadeira
+        mudança!"</p>
+      <p><strong>- Maria Costa, apoiadora do projeto</strong></p>
+    </div>
+  </section>
+
+  <!-- Seção de Detalhes do Projeto 3 -->
+  <section class="project-details">
+    <h2>Projeto de Conservação de Corais: Oceano Vivo</h2>
+    <img src="imagens/corais.jpg" alt="Imagem do projeto de conservação de corais">
+    <p> O projeto "Oceano Vivo" foca na restauração e proteção dos recifes de corais, que são vitais para a vida
+      marinha. Infelizmente, devido às mudanças climáticas, os corais estão morrendo a uma taxa alarmante, o que ameaça
+      milhões de espécies marinhas. Através de técnicas de cultivo e replantio de corais, estamos criando um ambiente
+      propício para a regeneração desses ecossistemas. Além disso, o projeto envolve as comunidades locais,
+      sensibilizando sobre a importância de proteger nossos oceanos e as formas de vida que dependem dele. Ao apoiar o
+      "Oceano Vivo", você estará contribuindo para a preservação de um dos maiores patrimônios naturais do planeta,
+      garantindo a saúde dos oceanos para as gerações futuras.</p>
+    <div class="progress-bar">
+      <div style="width: 40%;"></div>
+    </div>
+    <p><strong>Créditos Disponíveis:</strong> 400 de 890</p>
+    <div class="buy-section">
+      <a class="buy-button" href="login_cadastro.html">Comprar Créditos</a>
+    </div>
+    <div class="testimonials">
+      <p>"Apoiar a conservação de corais é essencial para manter nossos oceanos saudáveis. Recomendo a todos!"</p>
+      <p><strong>- Carlos Oliveira, apoiador do projeto</strong></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Eco7. Todos os direitos reservados.</p>
+    <ul>
+      <li><a href="contato.html">Contato</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="termos.html">Termos de Uso</a></li>
+      <li><a href="privacidade.html">Política de Privacidade</a></li>
+    </ul>
+  </footer>
+
+</body>
+
+</html>

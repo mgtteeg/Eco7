@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco7 - Notícias</title>
+    <style>
+        /* CSS embutido para esta página */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 20px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo h1 {
+            font-size: 36px;
+        }
+
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .news {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .news h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #003366;
+        }
+
+        .news-item {
+            margin-bottom: 40px;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .news-item img {
+            width: 100%;
+            max-width: 400px;
+            /* Limita o tamanho máximo das imagens */
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            object-fit: cover;
+            /* Garante que a imagem preencha o espaço sem distorção */
+        }
+
+
+        .news-item h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #009688;
+        }
+
+        .news-item p {
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        .news-item a {
+            color: #009688;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .news-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer ul {
+            list-style-type: none;
+        }
+
+        footer ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .conteudo-completo {
+            display: none;
+            margin-top: 20px;
+            font-size: 16px;
+            color: #555;
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header com navegação -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Eco Trade</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="noticias.html">Notícias</a></li>
+                    <li><a href="login_cadastro.html">Login</a></li>
+                    <li><a href="login_cadastro.html">Cadastro</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção Notícias -->
+    <section class="news">
+        <div class="section-content">
+            <h2>Últimas Notícias sobre Sustentabilidade</h2>
+
+            <!-- Notícia 1 -->
+            <div class="news-item">
+                <img src="imagens/img1.jfif" alt="Créditos de Carbono">
+                <h3>Nova Lei de Carbono No Brasil</h3>
+                <p>O governo brasileiro está criando novas políticas para incentivar a compra e venda de créditos de
+                    carbono...</p>
+                <a href="javascript:void(0);" onclick="mostrarMais(1)">Leia mais</a>
+                <div id="noticia1" class="conteudo-completo">
+                    <p>O governo brasileiro está criando novas políticas para incentivar a compra e venda de créditos de
+                        carbono. A iniciativa visa reduzir as emissões de gases do efeito estufa e fortalecer a
+                        participação do Brasil no mercado de carbono internacional. A expectativa é que a implementação
+                        da lei ajude o Brasil a se tornar um dos principais players no mercado global de créditos de
+                        carbono, além de gerar novas oportunidades de negócio para empresas que buscam neutralizar suas
+                        emissões de carbono.</p>
+                </div>
+            </div>
+
+            <!-- Notícia 2 -->
+            <div class="news-item">
+                <img src="imagens/img2.jfif" alt="Empresas Sustentáveis">
+                <h3>Empresas Líderes em Sustentabilidade</h3>
+                <p>Empresas ao redor do mundo estão adotando créditos de carbono e outras iniciativas sustentáveis para
+                    minimizar seu impacto...</p>
+                <a href="javascript:void(0);" onclick="mostrarMais(2)">Leia mais</a>
+                <div id="noticia2" class="conteudo-completo">
+                    <p>Empresas de todo o mundo estão implementando estratégias para reduzir sua pegada de carbono, e
+                        muitas delas estão utilizando créditos de carbono como uma ferramenta crucial para alcançar suas
+                        metas ambientais. Organizações como Google, Microsoft e Unilever estão na vanguarda desse
+                        movimento e têm investido fortemente em práticas sustentáveis que não só beneficiam o meio
+                        ambiente, mas também geram uma imagem positiva perante consumidores e investidores.</p>
+                </div>
+            </div>
+
+            <!-- Notícia 3 -->
+            <div class="news-item">
+                <img src="imagens/img3.jfif" alt="Reflorestamento">
+                <h3>Reflorestamento e Biodiversidade: O Caminho Para o Futuro</h3>
+                <p>Iniciativas de reflorestamento estão crescendo em todo o mundo. Com o aumento das atividades de
+                    plantio...</p>
+                <a href="javascript:void(0);" onclick="mostrarMais(3)">Leia mais</a>
+                <div id="noticia3" class="conteudo-completo">
+                    <p>O reflorestamento está se tornando uma das principais estratégias para combater as mudanças
+                        climáticas e restaurar a biodiversidade global. O aumento das áreas verdes é crucial não apenas
+                        para capturar carbono, mas também para proteger ecossistemas e preservar a fauna e a flora.
+                        Várias iniciativas de plantio estão sendo implementadas em todo o mundo, e elas estão se
+                        mostrando eficazes em mitigar os impactos ambientais do desmatamento e da degradação do solo.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Eco7. Todos os direitos reservados.</p>
+        <ul>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="termos.html">Termos de Uso</a></li>
+            <li><a href="privacidade.html">Política de Privacidade</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        function mostrarMais(id) {
+            var noticia = document.getElementById('noticia' + id);
+            if (noticia.style.display === "none") {
+                noticia.style.display = "block";
+            } else {
+                noticia.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

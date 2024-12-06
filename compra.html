@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagamento - Eco7</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* CSS existente */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .header-container {
+      background-color: #2e8b57;
+
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-menu a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .nav-menu a:hover {
+      background-color: #1c5e3a;
+      transform: scale(1.1);
+    }
+
+    .payment-section {
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      width: 80%;
+      max-width: 600px;
+      flex: 1;
+      text-align: center;
+    }
+
+    .payment-section label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    .payment-section input,
+    .payment-section select,
+    .payment-section button {
+      width: 100%;
+      margin-top: 5px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .payment-section button {
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 15px;
+      transition: background-color 0.3s;
+    }
+
+    .payment-section button:hover {
+      background-color: #218838;
+    }
+
+    .total-price {
+      margin-top: 15px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .project-image {
+      display: block;
+      margin: 20px 0;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .qr-code {
+      display: none;
+      margin-top: 15px;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      /* Centraliza a imagem */
+    }
+
+    footer {
+      background-color: #2e8b57;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+
+<body onload="verificarQRCode()">
+
+  <!-- Header com navegação -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <h1>Eco7</h1>
+      </div>
+      <nav class="nav-menu">
+        <a href="compra.html">Compra</a>
+        <a href="vitrine.html">Vitrine</a>
+        <a href="suporte.html">Suporte</a>
+        <a href="index.html">Sair</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Seção de Pagamento -->
+  <section class="payment-section">
+    <h2>Finalizar Compra</h2>
+
+    <!-- Seleção do projeto -->
+    <label for="project-selection">Selecione o projeto:</label>
+    <select id="project-selection" onchange="atualizarPreco()">
+      <option value="floresta-verde" data-preco="49.99" data-imagem="imagens/reflorestamento.jpeg">Projeto de
+        Reflorestamento: Floresta Verde - R$ 49,99 por crédito</option>
+      <option value="sol-verde" data-preco="55.99" data-imagem="imagens/solar.jpg">Projeto de Energia Solar: Sol Verde -
+        R$ 55,99 por crédito</option>
+      <option value="oceano-vivo" data-preco="62.99" data-imagem="imagens/corais.jpg">Projeto de Conservação de Corais:
+        Oceano Vivo - R$ 62,99 por crédito</option>
+    </select>
+
+    <!-- Exibição da imagem do projeto -->
+    <img id="project-image" class="project-image" alt="Imagem do projeto" style="display: none;">
+
+    <!-- Quantidade de créditos -->
+    <label for="credit-amount">Quantidade de créditos:</label>
+    <input type="number" id="credit-amount" min="1" placeholder="Quantos créditos?" required oninput="atualizarPreco()">
+
+    <!-- Exibição do preço total -->
+    <div class="total-price" id="total-price">Total: R$ 0,00</div>
+
+    <!-- Forma de pagamento (apenas Pix) -->
+    <label for="payment-method">Forma de pagamento:</label>
+    <select id="payment-method" onchange="mostrarQRCode()">
+      <option value="pix">Pix</option>
+      <option value="outro">Outro</option>
+    </select>
+
+    <!-- Exibição do QR Code para pagamento -->
+    <img id="qr-code" class="qr-code" src="imagens/qrcode-pix.png" alt="QR Code para pagamento">
+
+    <button onclick="confirmarCompra()">Confirmar Compra</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Eco7. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function atualizarPreco() {
+      const projetoSelecionado = document.getElementById('project-selection');
+      const precoPorCredito = parseFloat(projetoSelecionado.options[projetoSelecionado.selectedIndex].getAttribute('data-preco'));
+      const quantidade = parseFloat(document.getElementById('credit-amount').value);
+      const imagemProjeto = projetoSelecionado.options[projetoSelecionado.selectedIndex].getAttribute('data-imagem');
+
+      if (!isNaN(quantidade) && quantidade > 0) {
+        const total = (precoPorCredito * quantidade).toFixed(2);
+        document.getElementById('total-price').innerText = `Total: R$ ${total}`;
+      } else {
+        document.getElementById('total-price').innerText = `Total: R$ 0,00`;
+      }
+
+      // Atualiza a imagem do projeto
+      const imagemElement = document.getElementById('project-image');
+      if (imagemProjeto) {
+        imagemElement.src = imagemProjeto;
+        imagemElement.style.display = 'block';
+      } else {
+        imagemElement.style.display = 'none';
+      }
+    }
+
+    function mostrarQRCode() {
+      const metodoPagamento = document.getElementById('payment-method').value;
+      const qrCodeElement = document.getElementById('qr-code');
+
+      if (metodoPagamento === 'pix') {
+        qrCodeElement.style.display = 'block';
+
+        // Exibe um alerta após 10 segundos
+        setTimeout(() => {
+          alert('O pagamento não foi confirmado.');
+        }, 10000);
+      } else {
+        qrCodeElement.style.display = 'none';
+      }
+    }
+
+    function verificarQRCode() {
+      const metodoPagamento = document.getElementById('payment-method').value;
+      const qrCodeElement = document.getElementById('qr-code');
+
+      if (metodoPagamento !== 'pix') {
+        qrCodeElement.style.display = 'none';
+      }
+    }
+
+    function confirmarCompra() {
+      const quantidade = document.getElementById('credit-amount').value;
+      const projeto = document.getElementById('project-selection').options[document.getElementById('project-selection').selectedIndex].text;
+      const metodoPagamento = document.getElementById('payment-method').value;
+
+      if (quantidade && quantidade > 0) {
+        // Exibe a imagem do QR Code assim que a opção de pagamento for "Pix"
+        mostrarQRCode();
+      } else {
+        alert('Por favor, selecione uma quantidade válida de créditos.');
+      }
+    }
+  </script>
+</body>
+
+</html>
